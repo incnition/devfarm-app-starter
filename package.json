@@ -5,6 +5,7 @@
     "dev-debug": "node_modules/.bin/nodemon --exec node-debug server.js",
     "build": "next build",
     "migrate": "./node_modules/.bin/migrate --config ./db/config.js",
+    "mongo": "mongo localhost:27017/devfarm_app_development",
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
