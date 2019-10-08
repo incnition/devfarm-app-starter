@@ -5,6 +5,7 @@ const { User } = require('../models')
  */
 async function up () {
   await User.db.createCollection('users')
+  await User.collection.createIndex( { "email": 1 }, { unique: true } )
 }
 
 /**

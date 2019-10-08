@@ -1,12 +1,14 @@
-import React from 'react'
-import Link from 'next/link'
-import Head from '../components/head'
-import Nav from '../components/nav'
+import React from 'react';
+import Link from 'next/link';
+import Head from '../components/head';
+import Nav from '../components/nav';
+import Test from '../components/test';
 
-const Home = () => (
+const Home = (props) => (
   <div>
     <Head title="Home" />
     <Nav />
+    <Test {...props} />
 
     <div className="hero">
       <h1 className="title">Welcome to Next!</h1>
