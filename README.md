@@ -1,3 +1,35 @@
+# "Next.js/React.js/MongoDB/GraphQL/Jest/React Testing Library" Starter App
+
+## Testing Philosophy
+
+- E2E - ~10%
+- Integration - ~40%
+- Unit for GraphQL API/Models - ~25%
+- Static Analysis tools (prettier/eslint) - ~25%
+
+## Getting up and Running
+
+### Installing Dependencies
+
+- Node 12
+- MongoDB
+- Yarn
+
+### Setting up Environment Variables
+
+- copy .env.example to .env
+- change values in .env based on your environment
+
+### Level of Knowledge
+
+- How to write and run tests with Jest/React Testing Library
+- How to write Queries, Mutations, Schema changes, etc. in GraphQL
+- How to use the MongoDB shell, and how to CRUD Documents on the fly
+- How to write styles
+- How to organize components
+
+# NEXT.JS README
+
 This project was bootstrapped with [Create Next App](https://github.com/segmentio/create-next-app).
 
 Find the most recent version of this guide at [here](https://github.com/segmentio/create-next-app/blob/master/lib/templates/default/README.md). And check out [Next.js repo](https://github.com/zeit/next.js) for the most up-to-date info.

@@ -1,14 +1,14 @@
-import Head from '../components/head'
+import AppUsers from '../components/AppUsers'
+import Head from '../components/Head'
 import Link from 'next/link'
-import Nav from '../components/nav'
+import Nav from '../components/Nav'
 import React from 'react'
-import Test from '../components/test'
 
 const Home = props => (
   <div>
     <Head title='Home' />
     <Nav />
-    <Test {...props} />
+    <AppUsers {...props} />
 
     <div className='hero'>
       <h1 className='title'>Welcome to Next!</h1>
