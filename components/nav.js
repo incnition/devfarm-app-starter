@@ -1,5 +1,5 @@
-import React from 'react'
 import Link from 'next/link'
+import React from 'react'
 
 const links = [
   { href: 'https://github.com/segmentio/create-next-app', label: 'Github' }
@@ -12,7 +12,7 @@ const Nav = () => (
   <nav>
     <ul>
       <li>
-        <Link prefetch href="/">
+        <Link prefetch href='/'>
           <a>Home</a>
         </Link>
       </li>

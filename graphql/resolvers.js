@@ -1,4 +1,4 @@
-const { User } = require('../db/models');
+const { User } = require('../db/models')
 
 const resolvers = {
   Query: {
@@ -6,9 +6,9 @@ const resolvers = {
       return User.findOne(args)
     },
     users: (_, args) => {
-      return User.find(args);
-    },
-  },
-};
+      return User.find(args)
+    }
+  }
+}
 
-module.exports = resolvers;
+module.exports = resolvers
