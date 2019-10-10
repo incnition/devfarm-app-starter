@@ -23,18 +23,9 @@ let port = parseInt(process.env.PORT, 10) || 3000
 if (process.env.NODE_ENV === 'test') port++
 
 console.warn("PORT:", port)
-const result = app
+app
   .prepare()
   .then(() => server.listen(port))
-  .catch(err => {
-    console.warn('ERRROOOOOOORR:', err)
-  })
-console.warn("RESULT!", result)
+  .catch(err => console.error(err))
 
 module.exports = server
-// return server.listen(port, () => {
-//   console.log('Listening on port ', port)
-//   resolve(app)
-// })
-// })
-// .catch(err => reject(err))
