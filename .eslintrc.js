@@ -22,6 +22,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'sort-imports': 2,
+    "sort-imports": ["error", {
+      "ignoreCase": true,
+    }]
   },
 }

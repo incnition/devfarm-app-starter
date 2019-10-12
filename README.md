@@ -2,7 +2,15 @@
 
 ## Testing Philosophy
 
-- E2E - ~10%
+We follow (roughly) the [Testing Trophy](https://kentcdodds.com/blog/unit-vs-integration-vs-e2e-tests) philosophy.
+
+So Far:
+- Integration tests: testing-Library, searching for text on a page, etc. (covers React-based interfaces, making sure everything still works together ... basically testing everything but the browser)
+- Unit tests: API tests (GraphQL): Supertest - getting different combinations of data, checking the result in JSON
+- Static Analysis: ESLint & Prettier - when your IDE yells at you.
+
+Eventually we want the following spread:
+- E2E - ~10% - something like Cypress (coming later)
 - Integration - ~40%
 - Unit for GraphQL API/Models - ~25%
 - Static Analysis tools (prettier/eslint) - ~25%

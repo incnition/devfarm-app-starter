@@ -22,10 +22,7 @@ server.all('*', (req, res) => handle(req, res))
 let port = parseInt(process.env.PORT, 10) || 3000
 if (process.env.NODE_ENV === 'test') port++
 
-console.warn("PORT:", port)
-app
+module.exports = app
   .prepare()
   .then(() => server.listen(port))
   .catch(err => console.error(err))
-
-module.exports = server
