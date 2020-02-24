@@ -1,4 +1,5 @@
-const { User } = require('../db/models')
+const { User } = require('../db')
+// console.log("USER:", User)
 
 const resolvers = {
   Query: {
@@ -6,7 +7,7 @@ const resolvers = {
       return User.findOne(args)
     },
     users: (_, args) => {
-      return User.find(args)
+      return User.findAll()
     }
   }
 }

@@ -4,7 +4,6 @@ import app from '../../server'
 import fetch from 'cross-fetch'
 import { getByText } from '@testing-library/dom'
 import { JSDOM } from 'jsdom'
-import mongoose from 'mongoose'
 
 const fetchBody = url =>
   new Promise((resolve, reject) => {
@@ -31,6 +30,5 @@ it('Shows "Welcome to Next.js!"', async done => {
 
 afterAll(done => {
   server.close()
-  mongoose.disconnect()
   done()
 })
