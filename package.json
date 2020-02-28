@@ -13,7 +13,7 @@
     "lint": "node_modules/.bin/eslint ./components/**/*.js ./pages/**/*.js ./styles/**/*.js ./graphql/**/*.js ./db/**/*.js --no-ignore",
     "lint-fix": "node_modules/.bin/eslint ./components/**/*.js ./pages/**/*.js ./styles/**/*.js ./graphql/**/*.js ./db/**/*.js --no-ignore --fix",
     "start": "NODE_ENV=production nodemon --exec node server.js",
-    "test": "NODE_ENV=test jest --runInBand",
+    "test": "NODE_ENV=test jest --runInBand --detectOpenHandles",
     "test-integration": "NODE_ENV=test jest --runInBand --env=node --detectOpenHandles",
     "test-watch": "NODE_ENV=test jest --runInBand --watch --env=node --detectOpenHandles"
   },

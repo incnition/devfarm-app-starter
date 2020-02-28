@@ -1,9 +1,4 @@
-import app from '../../server'
-import { clean } from '../../tests/utils'
-import factories from '../../tests/factories'
-import supertest from 'supertest'
-const graphqlEndpoint = 'http://localhost:3001/'
-const request = supertest(graphqlEndpoint)
+import { clean, request, factories, app } from '../../tests/utils'
 
 let server
 beforeAll(async () => {
