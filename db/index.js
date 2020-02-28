@@ -29,7 +29,7 @@ fs.readdirSync(modelLocation)
   )
   .forEach(file => {
     const fullPath = path.join(modelLocation, file)
-    const model = require(fullPath)
+    const model = require(fullPath)(sequelize, Sequelize)
     db[model.name] = model
   })
 
@@ -41,6 +41,5 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize
 db.Sequelize = Sequelize
-// console.log(Object.keys(db))
 
 module.exports = db

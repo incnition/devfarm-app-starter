@@ -7,8 +7,7 @@ const rootValue = require('./graphql/resolvers')
 
 const dev = process.env.NODE_ENV !== 'production'
 
-const db = require('./db');
-// if (dev) console.log('DATABASE CONFIG:', db.sequelize.config)
+// const db = require('./db');
 
 const graphiql = dev
 const app = next({ dev })
@@ -17,7 +16,6 @@ const server = express()
 server.use(
   '/graphql',
   graphqlHTTP(request => {
-    // console.warn('REQUEST:', request)
     return {
       schema,
       rootValue,

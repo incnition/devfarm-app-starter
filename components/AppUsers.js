@@ -3,7 +3,6 @@ import React from 'react'
 import { useGraphQL } from 'graphql-react'
 
 const Test = () => {
-  console.warn(graphQLConfig)
   const { loading, cacheValue: { data, ...errors } = {} } = useGraphQL({
     fetchOptionsOverride: graphQLConfig,
     operation: {

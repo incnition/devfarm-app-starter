@@ -1,8 +1,7 @@
 'use strict'
 
 const bcrypt = require('bcrypt')
-// const { encryptedPassword } = require('../../utils')
-
+const { encryptedPassword } = require('../../utils')
 
 module.exports = (sequelize, Sequelize) => {
   const User = sequelize.define(
@@ -75,12 +74,6 @@ module.exports = (sequelize, Sequelize) => {
     },
     { tableName: 'users' }
   )
-  User.associate = models => {
-    models.User.hasMany(models.Device, {
-      foreignKey: 'userId',
-      allowNull: true
-    })
-  }
   User.prototype.authenticate = function(password) {
     return bcrypt.compareSync(password, this.getDataValue('encryptedPassword'))
   }

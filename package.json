@@ -14,8 +14,8 @@
     "lint-fix": "node_modules/.bin/eslint ./components/**/*.js ./pages/**/*.js ./styles/**/*.js ./graphql/**/*.js ./db/**/*.js --no-ignore --fix",
     "start": "NODE_ENV=production nodemon --exec node server.js",
     "test": "NODE_ENV=test jest --runInBand",
-    "test-integration": "NODE_ENV=test jest --runInBand --env=node",
-    "test-watch": "NODE_ENV=test jest --runInBand --watch"
+    "test-integration": "NODE_ENV=test jest --runInBand --env=node --detectOpenHandles",
+    "test-watch": "NODE_ENV=test jest --runInBand --watch --env=node --detectOpenHandles"
   },
   "dependencies": {
     "@babel/core": "7",
@@ -29,6 +29,8 @@
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
+    "factory-girl": "^5.0.4",
+    "faker": "^4.1.0",
     "graphql": "^14.5.8",
     "graphql-react": "^8.3.0",
     "graphql-sequelize": "^9.4.0",

@@ -1,6 +1,7 @@
-import supertest from 'supertest'
 import app from '../../server'
-import { findAllByAltText } from '@testing-library/dom'
+import { clean } from '../../tests/utils'
+import factories from '../../tests/factories'
+import supertest from 'supertest'
 const graphqlEndpoint = 'http://localhost:3001/'
 const request = supertest(graphqlEndpoint)
 
@@ -9,24 +10,72 @@ beforeAll(async () => {
   server = await app
 })
 
+beforeEach(async () => {
+  await clean()
+})
+
 afterAll(done => {
   server.close()
   done()
 })
 
-describe('users', () => {
-  it('returns a list of users', async (done) => {
-    // const users = 
+describe('user', () => {
+  it('returns one user', async (done) => {
+    const user = await factories.create('User')
+    const query = `
+      {
+        user(id: ${user.id}){
+          id
+          firstName
+          lastName
+          email
+        }
+      }
+    `
     request
-      .post('/graphql')
-      .send({ query: '{ user { id firstName lastName email } }' })
+      .post('graphql')
+      .send({ query })
       .expect(200)
       .end((error, response) => {
         if (error) fail(error)
-        if (response) console.warn(response.body)
-        const { users } = response.body
-        expect(users).toEqual([{id: 1}])
-        console.warn(users)
+        const { user } = response.body.data
+        expect(user).toEqual({
+          id: user.id.toString(),
+          email: user.email,
+          firstName: user.firstName,
+          lastName: user.lastName
+        })
+        done()
+      })
+  })
+})
+
+describe('users', () => {
+  it('returns a list of users', async (done) => {
+    const user = await factories.create('User')
+    const query = `
+      {
+        users {
+          id
+          firstName
+          lastName
+          email
+        }
+      }
+    `
+    request
+      .post('graphql')
+      .send({ query })
+      .expect(200)
+      .end((error, response) => {
+        if (error) fail(error)
+        const { users } = response.body.data
+        expect(users).toEqual([{
+          id: user.id.toString(),
+          email: user.email,
+          firstName: user.firstName,
+          lastName: user.lastName
+        }])
         done()
       })
   })

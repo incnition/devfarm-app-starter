@@ -1,5 +1,4 @@
 const { User } = require('../db')
-// console.log("USER:", User)
 
 const resolvers = {
   Query: {
