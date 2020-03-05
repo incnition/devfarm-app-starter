@@ -1,4 +1,4 @@
-# "Next.js/React.js/MongoDB/GraphQL/Jest/React Testing Library" Starter App
+# "Next.js/React.js/PostgreSQL/Sequelize/GraphQL/Jest/React Testing Library" Starter App
 
 ## Testing Philosophy
 
@@ -20,7 +20,8 @@ Eventually we want the following spread:
 ### Installing Dependencies
 
 - Node 12
-- MongoDB
+- PostgreSQL
+- Sequelize-CLI
 - Yarn
 
 ### Setting up Environment Variables
@@ -32,7 +33,6 @@ Eventually we want the following spread:
 
 - How to write and run tests with Jest/React Testing Library
 - How to write Queries, Mutations, Schema changes, etc. in GraphQL
-- How to use the MongoDB shell, and how to CRUD Documents on the fly
 - How to write styles
 - How to organize components
 
