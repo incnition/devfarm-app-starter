@@ -1,14 +1,6 @@
-const { User } = require('../db')
+const { mutations } = require('./mutations')
+const { queries } = require('./queries')
 
-const resolvers = {
-  Query: {
-    user: (_, args) => {
-      return User.findOne(args)
-    },
-    users: (_, args) => {
-      return User.findAll()
-    }
-  }
-}
+const resolvers = Object.assign({}, queries, mutations)
 
 module.exports = resolvers

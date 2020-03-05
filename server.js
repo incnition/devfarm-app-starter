@@ -7,8 +7,6 @@ const rootValue = require('./graphql/resolvers')
 
 const dev = process.env.NODE_ENV !== 'production'
 
-// const db = require('./db');
-
 const graphiql = dev
 const app = next({ dev })
 const handle = app.getRequestHandler()

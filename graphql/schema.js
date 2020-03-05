@@ -13,6 +13,26 @@ const typeDefs = `
     lastName: String!
     email: String!
   }
+
+  type Mutation {
+    createUserWithEmail(
+      email: String!,
+      firstName: String!,
+      lastName: String!,
+      password: String!,
+      passwordConfirmation: String!,
+      admin: Boolean
+    ): User!
+
+    updateUser(
+      email: String,
+      firstName: String,
+      lastName: String,
+      password: String,
+      passwordConfirmation: String,
+      admin: Boolean
+    ): User!
+  }
 `
 
 module.exports = makeExecutableSchema({ typeDefs, resolvers })

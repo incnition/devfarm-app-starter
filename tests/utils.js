@@ -1,7 +1,7 @@
-import app from '../server'
-import factories from './factories'
-import supertest from 'supertest'
-import { User } from '../db'
+const app = require('../server')
+const factories = require('./factories')
+const supertest = require('supertest')
+const { User } = require('../db')
 const graphqlEndpoint = 'http://localhost:3001/'
 const request = supertest(graphqlEndpoint)
 
