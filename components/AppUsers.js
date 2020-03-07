@@ -1,5 +1,5 @@
+import { graphQLConfig } from '../server/graphql/config'
 import React from 'react'
-import { graphQLConfig } from '../graphql/config'
 import { useGraphQL } from 'graphql-react'
 
 const Test = () => {
