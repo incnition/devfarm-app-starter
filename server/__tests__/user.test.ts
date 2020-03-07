@@ -1,21 +1,8 @@
-import { clean, request, factories, app } from '../../tests/utils'
-
-let server
-beforeAll(async () => {
-  server = await app
-})
-
-beforeEach(async () => {
-  await clean()
-})
-
-afterAll(done => {
-  server.close()
-  done()
-})
+import { factories, request } from '../../tests/utils'
+import '../../tests/setup'
 
 describe('user', () => {
-  it('returns one user', async (done) => {
+  it('returns one user', async done => {
     const user = await factories.create('User')
     const query = `
       {
@@ -46,7 +33,7 @@ describe('user', () => {
 })
 
 describe('users', () => {
-  it('returns a list of users', async (done) => {
+  it('returns a list of users', async done => {
     const user = await factories.create('User')
     const query = `
       {
@@ -65,12 +52,14 @@ describe('users', () => {
       .end((error, response) => {
         if (error) fail(error)
         const { users } = response.body.data
-        expect(users).toEqual([{
-          id: user.id.toString(),
-          email: user.email,
-          firstName: user.firstName,
-          lastName: user.lastName
-        }])
+        expect(users).toEqual([
+          {
+            id: user.id.toString(),
+            email: user.email,
+            firstName: user.firstName,
+            lastName: user.lastName
+          }
+        ])
         done()
       })
   })

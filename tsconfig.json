@@ -1,19 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "esModuleInterop": true,
+    "target": "es6",
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "noEmit": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
+    "baseUrl": "."
   },
   "exclude": [
     "node_modules",
@@ -30,6 +38,12 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "graphql/config.js", "graphql/mutations.js", "graphql/schema.js", "graphql/resolvers.js", "tests/utils.js", "tests/factories.js"
+    "**/*.tsx",
+    "graphql/config.js",
+    "graphql/mutations.js",
+    "graphql/schema.js",
+    "graphql/resolvers.js",
+    "tests/utils.js",
+    "tests/factories.js"
   ]
 }

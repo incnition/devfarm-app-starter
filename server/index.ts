@@ -1,9 +1,8 @@
-const express = require('express')
-const graphqlHTTP = require('express-graphql')
-const next = require('next')
-
-const schema = require('./graphql/schema')
-const rootValue = require('./graphql/resolvers')
+import express from 'express'
+import graphqlHTTP from 'express-graphql'
+import next from 'next'
+import schema from './graphql/schema'
+import rootValue from './graphql/resolvers'
 
 const dev = process.env.NODE_ENV !== 'production'
 
@@ -25,7 +24,7 @@ server.all('*', (req, res) => handle(req, res))
 let port = parseInt(process.env.PORT, 10) || 3000
 if (process.env.NODE_ENV === 'test') port++
 
-module.exports = app
+export default app
   .prepare()
   .then(() => server.listen(port))
   .catch(err => console.error(err))

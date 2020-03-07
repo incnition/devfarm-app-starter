@@ -1,10 +1,10 @@
 'use strict'
 
-const bcrypt = require('bcrypt')
-const { encryptedPassword } = require('../../utils')
+import bcrypt from 'bcrypt'
+import { encryptedPassword } from '../../utils'
 
-module.exports = (sequelize, Sequelize) => {
-  const User = sequelize.define(
+const User = (sequelize, Sequelize) => {
+  const UserModel = sequelize.define(
     'User',
     {
       email: {
@@ -15,7 +15,7 @@ module.exports = (sequelize, Sequelize) => {
           isUnique: function(email) {
             const currentUser = this
             const newRecord = currentUser.id === null
-            return User.findOne({ where: { email } }).then(previous => {
+            return UserModel.findOne({ where: { email } }).then(previous => {
               // If someone already has this email address and this is a new user being created, OR
               // someone already has this email address and we are are trying to update a different
               // user with the same email address ... then blow up.
@@ -74,9 +74,11 @@ module.exports = (sequelize, Sequelize) => {
     },
     { tableName: 'users' }
   )
-  User.prototype.authenticate = function(password) {
+  UserModel.prototype.authenticate = function(password) {
     return bcrypt.compareSync(password, this.getDataValue('encryptedPassword'))
   }
 
-  return User
+  return UserModel
 }
+
+export { User }
