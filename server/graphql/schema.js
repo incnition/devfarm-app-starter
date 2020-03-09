@@ -12,27 +12,26 @@ const typeDefs = `
     firstName: String!
     lastName: String!
     email: String!
+    password: String!
+    passwordConfirmation: String!
+    admin: Boolean
+  }
+
+  input UserInput {
+    email: String!
+    firstName: String!
+    lastName: String!
+    password: String!
+    passwordConfirmation: String!
+    admin: Boolean
   }
 
   type Mutation {
-    createUserWithEmail(
-      email: String!,
-      firstName: String!,
-      lastName: String!,
-      password: String!,
-      passwordConfirmation: String!,
-      admin: Boolean
-    ): User!
-
-    updateUser(
-      email: String,
-      firstName: String,
-      lastName: String,
-      password: String,
-      passwordConfirmation: String,
-      admin: Boolean
-    ): User!
+    createUserWithEmail(input: UserInput!): User!
+    updateUser(input: UserInput!): User!
   }
 `
+
+console.log(resolvers)
 
 module.exports = makeExecutableSchema({ typeDefs, resolvers })
