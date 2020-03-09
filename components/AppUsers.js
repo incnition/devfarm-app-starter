@@ -1,4 +1,4 @@
-import { graphQLConfig } from '../graphql/config'
+import { graphQLConfig } from '../server/graphql/config'
 import React from 'react'
 import { useGraphQL } from 'graphql-react'
 
