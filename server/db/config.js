@@ -47,5 +47,4 @@ const config = {
 
 // if (process.env.NODE_ENV === 'development') console.log("DB CONFIG:", config[process.env.NODE_ENV]);
 
-export { config }
-export default config
+module.exports = config

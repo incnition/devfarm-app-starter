@@ -44,6 +44,6 @@
     "graphql/schema.js",
     "graphql/resolvers.js",
     "tests/utils.js",
-    "tests/factories.js"
+    "tests/factories.js", "server/db/config.js"
   ]
 }
