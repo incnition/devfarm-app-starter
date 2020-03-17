@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize'
-import { config as c } from './config'
+import c from './config'
 const env = process.env.NODE_ENV || 'development'
 const config = c[env]
 
