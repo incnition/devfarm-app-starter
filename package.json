@@ -36,7 +36,7 @@
     "migrate-mongoose": "^4.0.0",
     "mongoose": "^5.7.3",
     "morgan": "^1.9.1",
-    "next": "^9.2.2",
+    "next": "^9.3.2",
     "next-eslint": "^0.0.4",
     "next-graphql-react": "^4.0.0",
     "pg": "^7.18.1",
